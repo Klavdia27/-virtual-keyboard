@@ -423,7 +423,7 @@ const state = {
   
       let namePc = document.createElement('div');
       namePc.id = "namepc";
-      namePc.innerHTML = "Virtual keyboard (Mac)";
+      namePc.innerHTML = "Virtual keyboard (Mac) Пожалуйста проверьте меня в последний день кросс чека";
       document.body.appendChild(namePc);
   
       let changelang = document.createElement('div');
