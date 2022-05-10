@@ -418,7 +418,7 @@ const state = {
   
       let textarea = document.createElement('textarea');
       textarea.id = "text";
-      textarea.innerHTML = "";
+      textarea.innerHTML = "Пожалуйста проверьте меня в последний день кросс чека";
       document.body.appendChild(textarea);
   
       let namePc = document.createElement('div');
