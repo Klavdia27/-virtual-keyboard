@@ -434,7 +434,7 @@ const state = {
   
       let changelang = document.createElement('div');
       changelang.id = "changelang";
-      changelang.innerHTML = "change language &ltctrl + cmd&gt <br><br> <a href="https&#58//github.com/Klavdia27/-virtual-keyboard/pull/2">https://github.com/Klavdia27/-virtual-keyboard/pull/2</a> ";
+      changelang.innerHTML = "change language &ltctrl + cmd&gt <br><br> https://github.com/Klavdia27/-virtual-keyboard/pull/2 ";
       document.body.appendChild(changelang);
     }
   }
