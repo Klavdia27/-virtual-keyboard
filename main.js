@@ -498,8 +498,8 @@ const state = {
   }, true)
   
   document.addEventListener("mousedown", (event) => {
+    if (event.target.classList.contains('key') ) { 
     let id = event.target.id.toString().toLowerCase();
-    console.log(id);
     document.querySelectorAll(".key").forEach(function(element) {
       element.classList.remove('active');
     });
@@ -507,6 +507,8 @@ const state = {
     setTimeout(() => {
       document.getElementById(id).classList.remove('active');
     },200)
+  }
+
   }, true)
   
   // смена языка клавиатуры  cmd и ctrl
