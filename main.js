@@ -2,14 +2,9 @@ const state = {
     lang: "en",
     isShiftPressed: false,
   }
-  //console.log('1=',langEn)
   let langEn = true;
-  console.log('2=',langEn)
   localStorage.setItem('languageEnglish', langEn);
-  console.log('3=',langEn)
   langEn = localStorage.getItem('languageEnglish');
-  console.log('4=',langEn)
-  console.log(langEn === "true")
   class Template {
     constructor() {
       this.stack = [];
@@ -395,7 +390,7 @@ const state = {
     render = (l, isShiftPressed = false) => {
       //console.log(localStorage.getItem('languageEnglish'))
       langEn = localStorage.getItem('languageEnglish');
-      console.log('0', langEn)
+      //console.log('0', langEn)
       const keys = lang[l].reduce((acc, row) => {
         const ks = row.map((k) => {
           let content = "";
@@ -528,7 +523,7 @@ const state = {
   
   document.querySelectorAll(".use-keyboard-input").forEach(element => {
     element.addEventListener("focus", () => {
-      console.log(element.value)
+      //console.log(element.value)
     })
   });
   function setLocalStorage() {
