@@ -2,9 +2,14 @@ const state = {
     lang: "en",
     isShiftPressed: false,
   }
+  //console.log('1=',langEn)
   let langEn = true;
+  console.log('2=',langEn)
   localStorage.setItem('languageEnglish', langEn);
-  // langEn = localStorage.getItem('languageEnglish');
+  console.log('3=',langEn)
+  langEn = localStorage.getItem('languageEnglish');
+  console.log('4=',langEn)
+  console.log(langEn === "true")
   class Template {
     constructor() {
       this.stack = [];
@@ -389,23 +394,24 @@ const state = {
   
     render = (l, isShiftPressed = false) => {
       //console.log(localStorage.getItem('languageEnglish'))
-      //langEn = localStorage.getItem('languageEnglish');
+      langEn = localStorage.getItem('languageEnglish');
+      console.log('0', langEn)
       const keys = lang[l].reduce((acc, row) => {
         const ks = row.map((k) => {
           let content = "";
         
   
-          if (isShiftPressed === true && langEn === true ) {
+          if (isShiftPressed === true && langEn === "true" ) {
             content = alternativeRenderConfigEn[k];
           } 
-          if (isShiftPressed === false && langEn === true ){
+          if (isShiftPressed === false && langEn === "true" ){
             content = renderConfigEn[k];
           }
   
-          if (isShiftPressed === true && langEn === false ) {
+          if (isShiftPressed === true && langEn === "false" ) {
             content = alternativeRenderConfigRu[k];
           } 
-          if (isShiftPressed === false && langEn === false ){
+          if (isShiftPressed === false && langEn === "false" ){
             content = renderConfigRu[k];
           }
   
@@ -418,7 +424,7 @@ const state = {
   
       let textarea = document.createElement('textarea');
       textarea.id = "text";
-      textarea.innerHTML = "Пожалуйста проверьте меня в последний день кросс чека";
+      textarea.innerHTML = "";
       document.body.appendChild(textarea);
   
       let namePc = document.createElement('div');
@@ -428,7 +434,7 @@ const state = {
   
       let changelang = document.createElement('div');
       changelang.id = "changelang";
-      changelang.innerHTML = "change language &ltctrl + cmd&gt";
+      changelang.innerHTML = "change language &ltctrl + cmd&gt <br><br> https://github.com/Klavdia27/-virtual-keyboard/pull/2 ";
       document.body.appendChild(changelang);
     }
   }
@@ -510,10 +516,9 @@ const state = {
         element.classList.remove('active');
       });
       document.getElementById('metaleft').classList.add('active');
-      document.getElementById('controlleft').classList.add('active');
-  
+      document.getElementById('controlleft').classList.add('active'); 
       console.log('смена языка клавиатуры ');
-      langEn ? langEn=false : langEn=true;
+      langEn === "true" ? langEn = "false" : langEn = "true";
       setLocalStorage();
       keyboard.init();
     }
